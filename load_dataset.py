@@ -28,8 +28,8 @@ def download():
     # filter only Github + ArXiv
     for split_name, pile_split in pile.items():
         # e.g. "train", pile_train
-        pile_github_arxiv_split = pile_split.filter(lambda sample: sample['meta']["pile_set_name"] in ["Github", "ArXiv"])
-        pile_github_arxiv_split.save_to_disk(f"{DISK_PATH}/pile_github_arxiv_{split_name}.hf")
+        pile_github_arxiv_split = pile_split.filter(lambda sample: sample['meta']["pile_set_name"] in ["Github", "ArXiv"], num_proc=NUM_PROC)
+        pile_github_arxiv_split.save_to_disk(f"{DISK_PATH}/pile_github_arxiv_{split_name}.hf", num_proc=NUM_PROC)
 
 if __name__ == "__main__":
     # print_examples()
