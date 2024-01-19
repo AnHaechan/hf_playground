@@ -35,9 +35,10 @@ def download():
 
 def test_load_from_disk():
     print("loading from disk")
-    pile_filtered_test = load_from_disk(f"{DISK_PATH}/pile_github_arxiv_test.hf")
+    pile_filtered_test = load_from_disk(f"{DISK_PATH}/pile_github_arxiv_train.hf")
     print(pile_filtered_test)
-    print(pile_filtered_test[0])
+    #  print(pile_filtered_test[2399])
+    # print(pile_filtered_test[3])
 
 if __name__ == "__main__":
     # print_examples()
